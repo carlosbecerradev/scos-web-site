@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import auth from './auth'
 import sede from './sede'
+import tipo_de_servicio from './tipo_de_servicio'
 
 Vue.use(Vuex)
 
@@ -25,5 +26,6 @@ export default new Vuex.Store({
   modules: {
     auth,
     sede,
+    tipo_de_servicio,
   }
 })
