@@ -55,7 +55,6 @@
         </div>
       </div>
     </b-form>
-    {{ tipoDeIncidencia }}
   </div>
 </template>
 
