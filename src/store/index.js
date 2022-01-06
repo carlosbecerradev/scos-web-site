@@ -5,6 +5,7 @@ import sede from './sede'
 import tipo_de_servicio from './tipo_de_servicio'
 import tipo_de_incidencia from './tipo_de_incidencia'
 import usuario from './usuario'
+import cliente from './cliente'
 
 Vue.use(Vuex)
 
@@ -31,5 +32,6 @@ export default new Vuex.Store({
     tipo_de_servicio,
     tipo_de_incidencia,
     usuario,
+    cliente,
   }
 })
