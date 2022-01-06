@@ -37,7 +37,6 @@ const actions = {
       if (response.status == 200) {
         const data = await response.json()
         commit("fillTiposDeServicio", data)
-        commit("setTotalRows", data.length);
       }
     } catch (error) {
       console.log("fetchGetTiposDeServicio:", error)

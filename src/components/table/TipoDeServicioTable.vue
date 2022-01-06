@@ -138,6 +138,7 @@ export default {
     },
     async fillTable() {
       await this.fetchGetTiposDeServicio();
+      this.setTotalRows(this.tiposDeServicio.length);
     },
   },
   mounted() {

@@ -61,10 +61,10 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["tipoDeServicio"]),
+    ...mapGetters(["tipoDeServicio", "tiposDeServicio"]),
   },
   methods: {
-    ...mapMutations(["setTipoDeServicio"]),
+    ...mapMutations(["setTipoDeServicio", "setTotalRows"]),
     ...mapActions([
       "fetchPostAddTipoDeServicio",
       "fetchPutEditTipoDeServicio",
@@ -78,7 +78,9 @@ export default {
       if (this.entidad.tipoDeServicioId > 0) {
         statusCode = await this.editar();
       }
+
       await this.fetchGetTiposDeServicio();
+      this.setTotalRows(this.tiposDeServicio.length);
       this.$bvModal.hide("tipo-de-servicio-form-modal");
 
       if (statusCode == 201) {
