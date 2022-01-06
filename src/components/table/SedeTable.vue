@@ -129,6 +129,7 @@ export default {
     },
     async fillTable() {
       await this.fetchGetSedes();
+      this.setTotalRows(this.sedes.length);
     },
   },
   mounted() {

@@ -61,10 +61,10 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["sede"]),
+    ...mapGetters(["sede", "sedes"]),
   },
   methods: {
-    ...mapMutations(["setSede"]),
+    ...mapMutations(["setSede", "setTotalRows"]),
     ...mapActions(["fetchPostAddSede", "fetchPutEditSede", "fetchGetSedes"]),
     async guardar() {
       let statusCode = 0;
@@ -74,7 +74,9 @@ export default {
       if (this.sedeActual.sedeId > 0) {
         statusCode = await this.editar();
       }
+
       await this.fetchGetSedes();
+      this.setTotalRows(this.sedes.length);
       this.$bvModal.hide("sede-form-modal");
 
       if (statusCode == 201) {
