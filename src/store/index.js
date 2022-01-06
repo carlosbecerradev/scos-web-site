@@ -4,6 +4,7 @@ import auth from './auth'
 import sede from './sede'
 import tipo_de_servicio from './tipo_de_servicio'
 import tipo_de_incidencia from './tipo_de_incidencia'
+import usuario from './usuario'
 
 Vue.use(Vuex)
 
@@ -29,5 +30,6 @@ export default new Vuex.Store({
     sede,
     tipo_de_servicio,
     tipo_de_incidencia,
+    usuario,
   }
 })
