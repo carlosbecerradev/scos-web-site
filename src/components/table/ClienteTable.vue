@@ -38,6 +38,7 @@
       <template #cell(actions)="row">
         <div class="d-flex">
           <a
+            v-if="row.item.usuario.ubicacion != null"
             :href="
               'https://www.google.com/maps/@' +
               row.item.usuario.ubicacion.latitud +
