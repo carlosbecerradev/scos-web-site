@@ -34,6 +34,7 @@
                 >Tipos de Servicio</b-nav-item
               >
             </b-navbar-nav>
+            <usuario-dropdown></usuario-dropdown>
           </b-collapse>
         </b-container>
       </b-navbar>
@@ -42,7 +43,10 @@
 </template>
 
 <script>
+import UsuarioDropdown from "../dropdown/UsuarioDropdown.vue";
+
 export default {
   name: "AdministradorNavbar",
+  components: { UsuarioDropdown },
 };
 </script>

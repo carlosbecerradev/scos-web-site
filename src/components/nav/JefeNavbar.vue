@@ -35,6 +35,7 @@
                 >
               </b-nav-item-dropdown>
             </b-navbar-nav>
+            <usuario-dropdown></usuario-dropdown>
           </b-collapse>
         </b-container>
       </b-navbar>
@@ -43,7 +44,10 @@
 </template>
 
 <script>
+import UsuarioDropdown from "../dropdown/UsuarioDropdown.vue";
+
 export default {
   name: "JefeNavbar",
+  components: { UsuarioDropdown },
 };
 </script>
