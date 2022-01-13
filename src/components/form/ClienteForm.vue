@@ -138,7 +138,7 @@
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <b-form-group label="Dirección:">
             <b-form-input
-              v-model="entidad.usuario.ubicacion.direccion"
+              v-model="ubicacion.direccion"
               type="text"
               size="sm"
               placeholder="Escriba aquí"
@@ -150,7 +150,7 @@
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <b-form-group label="Latitud:">
             <b-form-input
-              v-model="entidad.usuario.ubicacion.latitud"
+              v-model="ubicacion.latitud"
               type="text"
               size="sm"
               placeholder="Escriba aquí"
@@ -162,7 +162,7 @@
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <b-form-group label="Longitud:">
             <b-form-input
-              v-model="entidad.usuario.ubicacion.longitud"
+              v-model="ubicacion.longitud"
               type="text"
               size="sm"
               placeholder="Escriba aquí"
@@ -192,6 +192,11 @@ export default {
   data() {
     return {
       entidad: {},
+      ubicacion: {
+        direccion: "",
+        latitud: "0",
+        longitud: "0",
+      },
       tipoDeServicioSelected: null,
       sedeSelected: null,
       sexos: [
@@ -235,6 +240,7 @@ export default {
       this.entidad.tipoDeServicio.tipoDeServicioId =
         this.tipoDeServicioSelected;
       this.entidad.usuario.sede.sedeId = this.sedeSelected;
+      this.entidad.usuario.ubicacion = this.ubicacion;
       let statusCode = 0;
 
       if (this.entidad.clienteId <= 0) {
@@ -284,6 +290,9 @@ export default {
   },
   created() {
     this.entidad = JSON.parse(JSON.stringify(this.cliente));
+    if (this.entidad.usuario.ubicacion != null) {
+      this.ubicacion = this.entidad.usuario.ubicacion;
+    }
   },
   mounted() {
     this.fillTipoDeServicioOptions();
