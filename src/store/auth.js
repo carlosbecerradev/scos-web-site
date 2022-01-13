@@ -7,6 +7,7 @@ const state = {
     jwt_subject: "username",
     jwt_expiration: "",
     jwt_authority: "",
+    jwt_sede: "",
   },
 }
 
@@ -17,6 +18,7 @@ const mutations = {
     state.jwt_cLaims.jwt_subject = claims.sub;
     state.jwt_cLaims.jwt_expiration = claims.exp;
     state.jwt_cLaims.jwt_authority = claims.authorities[0].authority;
+    state.jwt_cLaims.jwt_sede = claims.authorities[1].authority;
     console.log("Claims", claims);
   },
   CLEAN_JWT: (state) => {
@@ -24,6 +26,7 @@ const mutations = {
       jwt_subject: "",
       jwt_expiration: "",
       jwt_authority: "",
+      jwt_sede: "",
     };
     state.jwt = "";
   },
