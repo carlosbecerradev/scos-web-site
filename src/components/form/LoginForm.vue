@@ -55,7 +55,18 @@ export default {
     ...mapActions(["login"]),
     async executeLogin() {
       let flag = await this.login(this.loginRequest);
-      console.log("Inicio de Sesión:", falg);
+      if (flag == false) {
+        this.$swal.fire({
+          icon: "error",
+          title: "Su nombre de usuario o contraseña es incorrecto!",
+        });
+      }
+      if (flag) {
+        this.$swal.fire({
+          icon: "success",
+          title: "Inicio sesión correctamente!",
+        });
+      }
     },
   },
 };
