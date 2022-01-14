@@ -152,7 +152,6 @@ export default {
   },
   data() {
     return {
-      fechaFilterSelected: "todas",
       ordenes: [],
       ordenSelected: {},
       currentPage: 1,
@@ -180,7 +179,7 @@ export default {
     ]),
   },
   methods: {
-    ...mapMutations(["setTotalRows", "fillOrdenesDeServicioCanceladas"]),
+    ...mapMutations(["setTotalRows", "setConstanciaDeVisita"]),
     ...mapActions([
       "fetchGetOrdenesDeServicioCanceladasHoy",
       "fetchGetOrdenesDeServicioCanceladasMes",
@@ -188,10 +187,6 @@ export default {
       "fetchGetConstanciaDeVisita",
       "fetchPutRevisarOrdenDeServicio",
     ]),
-    onFiltered(filteredItems) {
-      this.setTotalRows(filteredItems.length);
-      this.currentPage = 1;
-    },
     verCliente(orden) {
       this.ordenSelected = orden;
       this.$bvModal.show("cliente-info-modal");
@@ -202,6 +197,7 @@ export default {
     },
     async verConstanciaDeVisita(orden) {
       let id = orden.id;
+      this.setConstanciaDeVisita(null);
       await this.fetchGetConstanciaDeVisita(id);
       this.$bvModal.show("constancia-modal");
     },
