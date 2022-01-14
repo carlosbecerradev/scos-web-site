@@ -8,7 +8,6 @@
 .btn-purple {
     background-color: var(--color-purple);
     color: var(--color-white);
-    margin-top: 0.5rem;
 }
 
 .btn-purple:hover {
@@ -19,7 +18,6 @@
 .btn-outline-purple {
     border: 1px solid var(--color-purple);
     color: var(--color-purple);
-    margin-top: 0.5rem;
 }
 
 .btn-outline-purple:hover {
@@ -29,4 +27,8 @@
 
 .bg-purple {
     background-color: var(--color-purple);
+}
+
+.text-purple {
+  color: var(--color-purple);
 }
