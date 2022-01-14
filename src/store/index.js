@@ -7,6 +7,8 @@ import tipo_de_incidencia from './tipo_de_incidencia'
 import usuario from './usuario'
 import cliente from './cliente'
 import empleado from './empleado'
+import orden_de_servicio from './orden_de_servicio'
+import constancia_de_visita from './constancia_de_visita'
 
 Vue.use(Vuex)
 
@@ -35,5 +37,7 @@ export default new Vuex.Store({
     usuario,
     cliente,
     empleado,
+    orden_de_servicio,
+    constancia_de_visita,
   }
 })
