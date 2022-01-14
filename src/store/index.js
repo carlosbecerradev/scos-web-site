@@ -9,6 +9,7 @@ import cliente from './cliente'
 import empleado from './empleado'
 import orden_de_servicio from './orden_de_servicio'
 import constancia_de_visita from './constancia_de_visita'
+import encuesta_de_atencion from './encuesta_de_atencion'
 
 Vue.use(Vuex)
 
@@ -39,5 +40,6 @@ export default new Vuex.Store({
     empleado,
     orden_de_servicio,
     constancia_de_visita,
+    encuesta_de_atencion,
   }
 })
