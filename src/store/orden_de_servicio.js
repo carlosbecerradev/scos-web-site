@@ -1,6 +1,7 @@
 const state = {
   ordenes_de_servicio: [],
   ordenes_de_servicio_canceladas: [],
+  ordenes_de_servicio_resueltas: [],
 }
 
 const mutations = {
@@ -9,6 +10,9 @@ const mutations = {
   },
   fillOrdenesDeServicioCanceladas(state, payload) {
     state.ordenes_de_servicio_canceladas = payload
+  },
+  fillOrdenesDeServicioResueltas(state, payload) {
+    state.ordenes_de_servicio_resueltas = payload
   },
 }
 
@@ -64,10 +68,33 @@ const actions = {
       console.log("fetchPutRevisarOrdenDeServicio", error)
     }
   },
+  async fetchGetOrdenesDeServicioResueltasTodas({ commit, state }) {
+    await this.dispatch("fetchGetOrdenesDeServicio");
+    commit("fillOrdenesDeServicioResueltas", state.ordenes_de_servicio.filter(orden => (orden.estado == "RESUELTA" || orden.estado == "CERRADA") && orden.revisada == false))
+  },
+  async fetchGetOrdenesDeServicioResueltasHoy({ commit, state }) {
+    await this.dispatch("fetchGetOrdenesDeServicio");
+    commit("fillOrdenesDeServicioResueltas", state.ordenes_de_servicio.filter(orden => {
+      let fechaDeResolucion = orden.fechaDeResolucion != null ? new Date(orden.fechaDeResolucion).toLocaleDateString() : orden.fechaDeResolucion;
+      let now = new Date();
+      let ahora = now.toLocaleDateString();
+      return (orden.estado == "RESUELTA" || orden.estado == "CERRADA") && orden.revisada == false && fechaDeResolucion == ahora;
+    }))
+  },
+  async fetchGetOrdenesDeServicioResueltasMes({ commit, state }) {
+    await this.dispatch("fetchGetOrdenesDeServicio");
+    commit("fillOrdenesDeServicioResueltas", state.ordenes_de_servicio.filter(orden => {
+      let fechaDeResolucion = orden.fechaDeResolucion != null ? new Date(orden.fechaDeResolucion).toLocaleDateString().substring(3, 10) : orden.fechaDeResolucion;
+      let now = new Date();
+      let mes = now.toLocaleDateString().substring(3, 10);
+      return (orden.estado == "RESUELTA" || orden.estado == "CERRADA") && orden.revisada == false && fechaDeResolucion == mes;
+    }))
+  },
 }
 
 const getters = {
   ordenesDeServicioCanceladas: state => state.ordenes_de_servicio_canceladas,
+  ordenesDeServicioResueltas: state => state.ordenes_de_servicio_resueltas,
 }
 
 export default {
