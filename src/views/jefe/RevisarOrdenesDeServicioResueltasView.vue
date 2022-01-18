@@ -200,7 +200,6 @@ export default {
         { key: "id", label: "Id" },
         { key: "tipoDeIncidencia", label: "Tipo de Incidencia" },
         { key: "descripcionDelProblema", label: "Descripción" },
-        { key: "motivoDeCancelacion", label: "Motivo" },
         { key: "fechaDeResolucion", label: "Fecha de Resolución" },
         { key: "actions", label: "Acciones" },
       ],
