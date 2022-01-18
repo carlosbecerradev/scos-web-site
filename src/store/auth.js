@@ -80,6 +80,7 @@ const actions = {
 const getters = {
   JWT: state => state.jwt,
   JWTClaims: state => state.jwt_cLaims,
+  miSede: state => state.jwt_cLaims.jwt_sede,
 }
 
 export default {
