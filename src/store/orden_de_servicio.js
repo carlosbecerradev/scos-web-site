@@ -19,7 +19,7 @@ const mutations = {
 const actions = {
   async fetchGetOrdenesDeServicio({ commit, getters }) {
     try {
-      const response = await fetch(getters["apiBaseURL"] + '/v1/orden-de-servicio', {
+      const response = await fetch(getters["apiBaseURL"] + '/v1/orden-de-servicio/sede/' + getters["miSede"], {
         method: "GET",
         headers: {
           Authorization: 'Bearer ' + getters["JWT"],
@@ -95,6 +95,7 @@ const actions = {
 const getters = {
   ordenesDeServicioCanceladas: state => state.ordenes_de_servicio_canceladas,
   ordenesDeServicioResueltas: state => state.ordenes_de_servicio_resueltas,
+  ordenesDeServicio: state => state.ordenes_de_servicio,
 }
 
 export default {
