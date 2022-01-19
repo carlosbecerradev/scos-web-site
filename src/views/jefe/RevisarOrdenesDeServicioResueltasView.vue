@@ -200,7 +200,13 @@ export default {
         { key: "id", label: "Id" },
         { key: "tipoDeIncidencia", label: "Tipo de Incidencia" },
         { key: "descripcionDelProblema", label: "Descripción" },
-        { key: "fechaDeResolucion", label: "Fecha de Resolución" },
+        {
+          key: "fechaDeResolucion",
+          label: "Fecha de Resolución",
+          formatter: (value) => {
+            return value.replace("T", " ");
+          },
+        },
         { key: "actions", label: "Acciones" },
       ],
     };

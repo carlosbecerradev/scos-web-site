@@ -161,11 +161,13 @@ export default {
         { key: "tipoDeIncidencia", label: "Tipo de Incidencia" },
         { key: "descripcionDelProblema", label: "Descripción" },
         { key: "motivoDeCancelacion", label: "Motivo" },
-        { key: "fechaDeCancelacion", label: "Fecha de Cancelación" },
-        // { key: "imagen", label: "Imagen del Problema" },
-        // { key: "cliente", label: "Cliente" },
-        // { key: "tecnico", label: "Técnico" },
-        // { key: "constancia", label: "Constancia de Visita" },
+        {
+          key: "fechaDeCancelacion",
+          label: "Fecha de Cancelación",
+          formatter: (value) => {
+            return value.replace("T", " ");
+          },
+        },
         { key: "actions", label: "Acciones" },
       ],
     };

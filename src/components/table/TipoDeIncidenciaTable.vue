@@ -92,6 +92,9 @@ export default {
         {
           key: "fechaDeCreacion",
           label: "F. Creación",
+          formatter: (value) => {
+            return value.replace("T", " ");
+          },
         },
         { key: "actions", label: "Acciones" },
       ],
