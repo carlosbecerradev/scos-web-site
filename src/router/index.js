@@ -7,7 +7,7 @@ import GestionarSedeView from '../views/administrador/GestionarSedeView'
 import GestionarTipoDeIncidenciaView from '../views/administrador/GestionarTipoDeIncidenciaView'
 import GestionarTipoDeServicioView from '../views/administrador/GestionarTipoDeServicioView'
 import GestionarUsuarioView from '../views/administrador/GestionarUsuarioView'
-import ConsultarOrdenesDeServicioView from '../views/coordinador/ConsultarOrdenesDeServicioView'
+import ConsultarOrdenesDeServicioView from '../views/jefe/ConsultarOrdenesDeServicioView'
 import GenerarOrdenDeServicioView from '../views/coordinador/GenerarOrdenDeServicioView'
 import ConsultarReporteDeTecnicosView from '../views/jefe/ConsultarReporteDeTecnicosView'
 import DashboardView from '../views/jefe/DashboardView'
@@ -64,7 +64,7 @@ const routes = [
     meta: { protectedRoute: true }
   },
   {
-    path: '/coordinador/ordenes-de-servicio',
+    path: '/jefe/ordenes-de-servicio/consultar',
     name: 'ConsultarOrdenesDeServicioView',
     component: ConsultarOrdenesDeServicioView,
     meta: { protectedRoute: true }

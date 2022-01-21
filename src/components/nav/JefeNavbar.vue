@@ -18,11 +18,14 @@
               <b-nav-item href="/jefe/dashboard">Dashboard</b-nav-item>
 
               <b-nav-item-dropdown text="Órdenes de Servicio">
+                <b-dropdown-item href="/jefe/ordenes-de-servicio/consultar"
+                  >Consultar Datos</b-dropdown-item
+                >
                 <b-dropdown-item href="/jefe/ordenes-de-servicio/resueltas"
-                  >Resueltas</b-dropdown-item
+                  >Revisar Resueltas</b-dropdown-item
                 >
                 <b-dropdown-item href="/jefe/ordenes-de-servicio/canceladas"
-                  >Canceladas</b-dropdown-item
+                  >Revisar Canceladas</b-dropdown-item
                 >
               </b-nav-item-dropdown>
 
