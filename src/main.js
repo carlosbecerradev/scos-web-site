@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import VueSweetalert2 from 'vue-sweetalert2';
+import JsonExcel from 'vue-json-excel'
 
 // Import Bootstrap an BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'
@@ -18,6 +19,8 @@ Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 
 Vue.use(VueSweetalert2);
+
+Vue.component('downloadExcel', JsonExcel)
 
 Vue.config.productionTip = false
 
