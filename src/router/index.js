@@ -10,7 +10,6 @@ import GestionarUsuarioView from '../views/administrador/GestionarUsuarioView'
 import ConsultarOrdenesDeServicioView from '../views/coordinador/ConsultarOrdenesDeServicioView'
 import GenerarOrdenDeServicioView from '../views/coordinador/GenerarOrdenDeServicioView'
 import ConsultarReporteDeTecnicosView from '../views/jefe/ConsultarReporteDeTecnicosView'
-import ConsultarReporteDeTiposDeIncidenciaView from '../views/jefe/ConsultarReporteDeTiposDeIncidenciaView'
 import DashboardView from '../views/jefe/DashboardView'
 import RevisarOrdenesDeServicioCanceladasView from '../views/jefe/RevisarOrdenesDeServicioCanceladasView'
 import RevisarOrdenesDeServicioResueltasView from '../views/jefe/RevisarOrdenesDeServicioResueltasView'
@@ -77,15 +76,9 @@ const routes = [
     meta: { protectedRoute: true }
   },
   {
-    path: '/jefe/reporte/tecnicos',
+    path: '/jefe/reporte/atencion',
     name: 'ConsultarReporteDeTecnicosView',
     component: ConsultarReporteDeTecnicosView,
-    meta: { protectedRoute: true }
-  },
-  {
-    path: '/jefe/reporte/tipos-de-incidencia',
-    name: 'ConsultarReporteDeTiposDeIncidenciaView',
-    component: ConsultarReporteDeTiposDeIncidenciaView,
     meta: { protectedRoute: true }
   },
   {
