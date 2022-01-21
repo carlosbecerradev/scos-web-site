@@ -27,11 +27,8 @@
               </b-nav-item-dropdown>
 
               <b-nav-item-dropdown text="Reportes">
-                <b-dropdown-item href="/jefe/reporte/tecnicos"
-                  >Técnicos</b-dropdown-item
-                >
-                <b-dropdown-item href="/jefe/reporte/tipos-de-incidencia"
-                  >Tipos de Incidencia</b-dropdown-item
+                <b-dropdown-item href="/jefe/reporte/atencion"
+                  >Atención</b-dropdown-item
                 >
               </b-nav-item-dropdown>
             </b-navbar-nav>
