@@ -32,3 +32,8 @@
 .text-purple {
   color: var(--color-purple);
 }
+
+/* Base */
+th {
+  vertical-align: middle !important;
+}
